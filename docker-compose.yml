@@ -1,5 +1,19 @@
 version: '3.7'
 services:
+  appnode:
+    container_name: appnode
+    restart: always
+    build: 
+      context: .
+      dockerfile: Dockerfile
+
+    links:
+      - mongodb_contenedor
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - app-network
+
   mongodb_contenedor:
     image: mongo
     restart: unless-stopped
@@ -11,3 +25,24 @@ services:
       - ./mongo-volume:/data/db
     ports:
       - 27017:27017
+
+  webserver:
+    image: nginx:mainline-alpine
+    container_name: webserver
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./ssl/:/etc/nginx/ssl
+
+    depends_on:
+      - appnode
+    networks:
+      - app-network
+
+ 
+networks:
+  app-network:
+    driver: bridge
