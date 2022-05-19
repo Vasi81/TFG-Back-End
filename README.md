@@ -10,6 +10,7 @@ docker-compose up --build -d
 
 ## Project setup
 ```
+Desde la carpeta del proyecto (TFG-Back-End)
 npm install
 ```
 
