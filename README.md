@@ -12,7 +12,7 @@ From the project folder (TFG-Back-End)
 2-npm run dev
 ```
 
-### Run
+### Run prod.
 ```
 node server.js
 ```
