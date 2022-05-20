@@ -1,5 +1,7 @@
 module.exports = {
+  /*Instancia mongo en localhost */
   url: "mongodb://localhost:27017/oficinas",
+  /*Instancia mongo en contendor docker mongodb */
   /*url: " mongodb://oficina:A2345Edix@127.0.0.1:27017/oficinas?authSource=admin",*/
   comercialDefault: "62700a345f995c303439ef15",
   host: "tasaciones-cbre-es.correoseguro.dinaserver.com",
