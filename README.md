@@ -1,17 +1,15 @@
 # Node.js Express & MongoDB: CRUD Rest APIs
 
-## docker-compose
-
-docker exec -it 2478ab20f9a0 bash
-mongodb://oficina:A2345Edix@127.0.0.1:27017/oficinas?authSource=admin"
-
+##if you want to use the images of mongodb+node+nginx with docker and docker-compose
+##First install docker and docker-compose.
 docker-compose down
 docker-compose up --build -d
 
-## Project setup
+## Project setup on local site(dev mode).
 ```
-Desde la carpeta del proyecto (TFG-Back-End)
-npm install
+From the project folder (TFG-Back-End)
+1-npm install
+2-npm run dev
 ```
 
 ### Run
